@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gridview_item_selector" >
+
+    <RelativeLayout
+        android:id="@+id/img_time"
+        android:layout_width="120dp"
+        android:layout_height="180dp"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp" >
+
+        <ImageView
+            android:id="@+id/video_img"
+            android:layout_width="120dp"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/album_time"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_alignParentBottom="true"
+            android:background="#55000000"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="#ffffff"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/video_name_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/img_time"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@id/img_time"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/video_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/color_2c2c2c"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/album_desc"
+            style="@style/album_item_text"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+         android:id="@+id/video_name_layout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/video_name_layout"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@id/img_time"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/english_name"
+            style="@style/album_item_text"
+             />
+
+        <TextView
+            android:id="@+id/medical_department"
+            style="@style/album_item_text" />
+
+        <TextView
+            android:id="@+id/common_cause"
+            style="@style/album_item_text" />
+
+        <TextView
+            android:id="@+id/common_symptom"
+            style="@style/album_item_text" />
+
+        <TextView
+            android:id="@+id/isInfect"
+            style="@style/album_item_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/img_time"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@id/img_time"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/album_play_selector"
+            android:clickable="true"
+            android:drawablePadding="3dp"
+            android:drawableStart="@drawable/play_white"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:text="@string/play_now"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/album_add_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/album_cancel_selector"
+            android:drawablePadding="3dp"
+            android:drawableStart="@drawable/video_add"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:singleLine="true"
+            android:text="@string/add_watch_list"
+            android:textColor="#ffffff"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</RelativeLayout>

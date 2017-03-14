@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#44000000"
+    android:orientation="horizontal" >
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ab_toggle_bg"
+    android:layout_gravity="bottom"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+    <TextView
+        style="@style/dialog_title_text"
+        android:textSize="14sp"
+        android:text="@string/sdcard_set_download_path_title" />
+
+    <View
+        style="@style/list_item_line"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp" />
+
+    <ListView
+        android:id="@+id/sdcard_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/listview_divider"
+        android:dividerHeight="1dp"
+        android:visibility="gone" >
+    </ListView>
+
+    <View
+        style="@style/list_item_line"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp" />
+
+    <TextView
+        android:id="@+id/card_path_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="8dp"
+        android:gravity="left"
+        android:text=""
+        android:textColor="#959595"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/btn_ok"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/btn_bg_white_new"
+        android:gravity="center"
+        android:text="@string/confirm"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/btn_cancel"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/btn_bg_white_new"
+        android:gravity="center"
+        android:text="@string/cancel"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+</LinearLayout>
+</LinearLayout>

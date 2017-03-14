@@ -1,0 +1,108 @@
+=============================================
+Android模式下：
+=============================================
+
+我们开发的环境是Ubuntu 12.04 x64系统，然后安装了google的Android SDK（NDK）。
+
+
+使用网络方式获取最新源码，方法如下：
+
+Android平台编译compile-ffmpeg之前，需要设置：
+
+export ANDROID_SDK=/home/peng/Work/adtbundle/adt-bundle-linux-x86_64-20131030/sdk && export ANDROID_NDK=/home/peng/Work/ndk && export PATH=$PATH:$ANDROID_SDK:$ANDROID_NDK:$ANDROID_SDK/platform-tools/ 
+
+请设置自己的sdk的目录
+
+
+1）先通过脚本获取网络最新源码.  在某个目录下执行：
+
+git clone https://github.com/dolit/ijkplayer.git ijkplayer-android
+cd ijkplayer-android
+git checkout -B latest n0.2.2
+
+2）然后用ijkplayer-android-stable目录下的init-android.sh脚本覆盖原有的init-android脚本。并修改文件权限为可执行。
+
+3）然后在命令行中执行：./init-android.sh
+
+以上步骤只需要做一次，以后如果修改代码等，不需要再重新执行上面的步骤，只需要每次执行后面的步骤。
+
+
+4）然后将我们改动过的版本覆盖合并过去: android下使用dolit/ijkplayer-android-stable下的文件夹去覆盖合并，覆盖完成后compile-ffmpeg.sh和init-android.sh需要手工修改下可执行权限。
+5) 然后再将整个dolit文件夹复制到android目录下一份
+6）然后再去执行对应的编译脚本 compile-ffmpeg即可。
+
+cd android
+./compile-ffmpeg.sh all
+./compile-ijk.sh all 
+
+这里的all也可以根据自己所需平台多少自行选择。
+
+7）将android目录下的：ijkmediaplayer、ijkmediaplayer-armv5、ijkmediaplayer-x86文件下的/libs/中的文件夹，比如armebi-v7a/armebi/x86等，根据自己所需的平台数（也可以全部），都复制到DolitMediaPlayer\libs目录下。
+
+然后打开adb环境，在windows下去运行demo程序即可。
+
+
+=============================================
+Android下修改视频加密秘钥和序列号：
+=============================================
+
+1）加密密钥的位置，搜fldvdec.c文件，会有多个，extra下有；再就是android文件夹下有，打开后搜rc4PasswordArr进行修改。需要修改的和windows版本加密秘钥一样！
+
+2）防止别人拿到这几个so后也能使用so，因此在启动so的时候也加入了一个密钥，这个密钥默认是和packageName、证书签名的MD5相关的。当然，您也可以自行修改这个，改为只和证书相关之类的。
+
+这个地方的话，我们是做了一个exe工具，输入packageName和证书的MD5，然后输出一个密钥，将密钥修改到：ijkmedia/ijkplayer/android/cert/cert.c文件夹下
+
+
+这里一般可以设置2个序号，一个用于debug的签名，一个用于release的签名。
+
+	unsigned char RC4Char[] = {0xe6, 0xeb, 0xb3, 0xab, 0x43, 0x29, 0x9f, 0xb8, 0x75, 0x84, 0x8c, 0x5e, 0x89, 0x27, 0xc9, 0xf5, 0xb, 0xc6, 0xcb, 0xe9, 0x94, 0xfe, 0x5a, 0xb9, 0xa6, 0xf5, 0x9b, 0x8d, 0x95, 0x6, 0x64, 0x18};
+    unsigned char RC4Char2[] = {0xbc, 0xbf, 0xe7, 0xfb, 0x46, 0x23, 0x9e, 0xbf, 0x7a, 0xd5, 0xd7, 0x56, 0x8b, 0x70, 0xc1, 0xf7, 0x0, 0x9a, 0xcf, 0xed, 0xcf, 0xaf, 0xf, 0xb5, 0xa5, 0xa1, 0x9c, 0x88, 0x93, 0x5d, 0x33, 0x1d};
+
+
+修改好上面2个地方后，重新覆盖，并别忘了将dolit文件夹放到android下一份，重新编译即可。
+
+
+=============================================
+IOS模式下：
+=============================================
+
+1）先通过脚本获取网络最新源码.  在某个目录下执行：
+
+git clone https://github.com/dolit/ijkplayer.git ijkplayer-ios
+cd ijkplayer-ios
+git checkout -B latest n0.2.2
+
+如果因为网络问题提示有更新错误，请多试几次即可。或者使用某个国外VPN。一般多试几次就可以全部更新下来。
+
+2）然后用ijkplayer-ios-stable目录下的init-ios.sh脚本覆盖原有的init-ios脚本。并修改文件权限为可执行。
+
+3）然后在命令行中执行：./init-ios.sh
+
+以上步骤只需要做一次，以后如果修改代码等，不需要再重新执行上面的步骤，只需要每次执行后面的步骤。
+
+
+4）然后使用dolit/ijkplayer-ios-stable下的文件覆盖合并。（覆盖我没改过的文件）. 覆盖后init-ios.sh和compile-ffmpeg.sh这2个我们需要的sh文件的执行权限丢失，需要使用命令行：
+
+chmod u+x init-ios.sh
+chmod u+x ios/compile-ffmpeg.sh
+赋予它们可执行权限。
+
+5) 然后再将整个dolit文件夹复制到ios目录下一份
+6）然后再去执行对应的编译脚本 compile-ffmpeg即可。如下：
+
+cd ios
+./compile-ffmpeg.sh all
+./compile-ijk.sh all 
+
+这里的all也可以根据自己所需平台多少自行选择。
+
+7）将ios目录下的：IJKMediaDemo下的IJKMediaDemo.xcodeproj用xcode打开，即可开始编译和测试。
+
+=============================================
+IOS下修改视频加密秘钥和序列号：
+=============================================
+
+1）加密密钥的位置，搜dolit文件夹下的所有fldvdec.c文件，会有多个；ios文件夹下的多个文件夹中，打开后搜rc4PasswordArr进行修改。需要修改的和windows版本加密秘钥一样！
+
+2）IOS是静态库，不存在盗用so文件的问题，因此不需要产品序号；不同的用户使用不同的工程（每个工程有自己的秘钥）即可。
+

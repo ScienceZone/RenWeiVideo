@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="vitamio_videoview_error_title">提示</string>
+    <string name="vitamio_videoview_error_text_invalid_progressive_playback">对不起这个视频流不能播放.</string>
+    <string name="vitamio_videoview_error_text_unknown">对不起，这个视频不能播放.</string>
+    <string name="vitamio_videoview_error_button">是</string>
+    <string name="mediacontroller_play_pause">Play/Pause</string>
+
+</resources>

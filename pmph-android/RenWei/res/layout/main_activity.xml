@@ -1,0 +1,132 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+
+    <FrameLayout
+        android:id="@+id/home_framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+         />
+
+     <FrameLayout
+        android:id="@+id/album_framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/rank_framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/find_framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/my_framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        android:visibility="gone" />
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_ececec"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp" >
+
+        <LinearLayout
+            android:id="@+id/home_tablayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="clickHomeTab"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/home_tabimg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/home_select" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/album_tablayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="clickAlbumTab"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/album_tabimg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/album" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rank_tablayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="clickRankTab"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/rank_tabimg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/rank" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/find_tablayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="clickFindTab"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/find_tabimg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/find" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/my_tablayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="clickMyTab"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/my_tabimg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                
+                android:src="@drawable/my" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

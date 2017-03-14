@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <RelativeLayout
+        android:id="@+id/title_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:padding="0.0px" >
+
+        <ImageView
+            android:id="@+id/back"
+            style="@style/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/person_info"
+            android:textColor="@color/color_080808"
+            android:textSize="19sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title_layout"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <View style="@style/horizontal_divider_5dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/person_info_rectangle_bg"
+            android:clickable="true"
+            android:onClick="showEditPhotoLayout" >
+
+            <TextView
+                style="@style/person_info_text"
+                android:text="@string/person_photo" />
+
+            <com.ipmph.v.custom.CircleImageView
+                android:id="@+id/user_info_photo"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/default_photo" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/person_info_rectangle_bg"
+            android:clickable="true" >
+
+            <TextView
+                style="@style/person_info_text"
+                android:text="@string/account_name" />
+
+            <TextView
+                android:id="@+id/account_name"
+                style="@style/person_info_text"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/person_info_rectangle_bg2"
+            android:clickable="true" >
+
+            <TextView
+                style="@style/person_info_text"
+                android:text="@string/register_time" />
+
+            <TextView
+                android:id="@+id/register_time"
+                style="@style/person_info_text"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:visibility="gone"
+            android:background="@drawable/person_info_rectangle_bg2"
+            android:clickable="true" >
+
+            <TextView
+                style="@style/person_info_text"
+                android:text="@string/person_birthday" />
+
+            <TextView
+                style="@style/person_info_text"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/person_info_rectangle_bg2"
+            android:clickable="true"
+            android:onClick="modifyPassword" >
+
+            <TextView
+                style="@style/person_info_text"
+                android:text="@string/modify_password" />
+
+            <TextView
+                style="@style/person_info_text"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/remember_pwd"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/login_bg_selector"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="logout"
+            android:padding="8dp"
+            android:text="@string/logout"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/modify_pwd_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title_layout"
+        android:background="@drawable/login_bg"
+        android:clickable="true"
+        android:visibility="gone" >
+
+        <RelativeLayout
+            android:id="@+id/origin_pwd_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="50dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true" >
+
+            <TextView
+                android:id="@+id/origin_pwd_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/origin_password"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/origin_pwd_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/origin_pwd_title"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/origin_pwd_title"
+                android:background="@null"
+                android:hint="@string/input_origin_pwd"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:textColor="@color/aa_black"
+                android:textSize="18sp" />
+
+            <View
+                style="@style/search_edittext_baseline"
+                android:layout_below="@id/origin_pwd_edit"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_toRightOf="@id/origin_pwd_title" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/new_pwd_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/origin_pwd_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true" >
+
+            <TextView
+                android:id="@+id/new_pwd_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/new_password"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/new_pwd_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/new_pwd_title"
+                android:background="@null"
+                android:hint="@string/input_new_pwd"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:textColor="@color/aa_black"
+                android:textSize="18sp" >
+            </EditText>
+
+            <View
+                style="@style/search_edittext_baseline"
+                android:layout_below="@id/new_pwd_edit"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_toRightOf="@id/new_pwd_title" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/new_pwd_confirm_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/new_pwd_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/new_pwd_confirm_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/new_password_confirm" />
+
+            <EditText
+                android:id="@+id/new_pwd_confirm_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/new_pwd_confirm_title"
+                android:background="@null"
+                android:hint="@string/password_hint"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:textColor="@color/aa_black"
+                android:textSize="18sp" >
+            </EditText>
+
+            <View
+                style="@style/search_edittext_baseline"
+                android:layout_below="@id/new_pwd_confirm_edit"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_toRightOf="@id/new_pwd_confirm_title" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/confirm_modify_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/new_pwd_confirm_layout"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/login_bg_selector"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="confirmModifyPwd"
+            android:padding="8dp"
+            android:text="@string/confirm_modify"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </RelativeLayout>
+<include
+        layout="@layout/upload_photo_layout"
+        />
+</RelativeLayout>

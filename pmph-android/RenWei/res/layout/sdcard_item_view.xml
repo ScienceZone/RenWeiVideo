@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/title"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+     >
+
+    <TextView
+        android:id="@+id/sdcard_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:text="1111111"
+        android:textSize="15sp" />
+ <TextView
+        android:id="@+id/free_space"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="222222222222"
+        android:textColor="#959595"
+        android:textSize="14sp" />
+    
+    <ImageView
+        android:id="@+id/check_view"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/icon_sex_checked"
+        android:textSize="14sp"
+        android:clickable="false"
+        android:visibility="gone" />
+
+   
+</RelativeLayout>

@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:gaolei="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="#ffffff"
+    android:paddingBottom="10dp"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+        <RelativeLayout
+            android:id="@+id/search_layout"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/search_edittext_round_corner_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" >
+
+                <ImageView
+                    android:id="@+id/search_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/search_icon" />
+
+                <TextView
+                    android:id="@+id/search_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/search_icon"
+                    android:singleLine="true"
+                    android:text="@string/wonderfull"
+                    android:textColor="@color/color_3b3b3b"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/recommend_layout"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="5dp" >
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/recommend_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+                </LinearLayout>
+
+                <com.ipmph.v.viewpagerindicator.IndicatorView
+                    android:id="@+id/viewpager_indicator"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_weight="1"
+                    gaolei:indicator_icon="@drawable/indicator_selector"
+                    gaolei:indicator_margin="2dp"
+                    gaolei:indicator_smooth="true" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/divider1"
+            android:visibility="gone"
+            style="@style/horizontal_divider_60dp" />
+
+        <LinearLayout
+            android:id="@+id/recommend_title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/title1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:text="@string/new_recommend"
+                android:textColor="@color/text_color"
+                android:textSize="17sp"
+                android:visibility="gone" />
+
+            <View style="@style/vertical_divider2" />
+
+            <TextView
+                android:id="@+id/recommend_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/more"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <com.ipmph.v.custom.CustomGridView
+            android:id="@+id/recommend_gridview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:horizontalSpacing="10dp"
+            android:numColumns="2"
+            android:scrollbars="none"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="5dp" />
+
+        <View
+            android:id="@+id/divider2"
+            android:visibility="gone"
+            style="@style/horizontal_divider_60dp" />
+
+        <LinearLayout
+            android:id="@+id/new_update_title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/title2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:text="@string/new_update"
+                android:textColor="@color/text_color"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/new_update_title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/class_title_select"
+                android:gravity="center"
+                android:textSize="16sp" />
+
+            <View style="@style/vertical_divider2" />
+
+            <TextView
+                android:id="@+id/new_update_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/class_title_unselect"
+                android:gravity="center"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/scrollview1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <com.ipmph.v.custom.CustomGridView
+                    android:id="@+id/new_update_gridview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:horizontalSpacing="10dp"
+                    android:verticalSpacing="5dp" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <View
+            android:id="@+id/divider3"
+            android:visibility="gone"
+            style="@style/horizontal_divider_60dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/first_class_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/text_color"
+                android:textSize="17sp" />
+
+            <com.ipmph.v.custom.CustomGridView
+                android:id="@+id/subclass1_title_gridview"
+               android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:layout_marginLeft="20dp"
+                android:horizontalSpacing="1dp"
+                android:layout_toRightOf="@id/first_class_title"
+                android:numColumns="4" />
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/scrollview2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <com.ipmph.v.custom.CustomGridView
+                    android:id="@+id/subclass1_video_gridview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:horizontalSpacing="10dp"
+                    android:verticalSpacing="5dp" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <View
+            android:id="@+id/more_divider1"
+             android:visibility="gone"
+            style="@style/horizontal_divider_5dp" />
+
+        <TextView
+            android:id="@+id/teach_more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:padding="10dp"
+            android:background="@drawable/gridview_item_selector"
+            android:gravity="center"
+            android:text="@string/more"
+            android:visibility="gone"
+            android:textColor="@color/color_3b3b3b"
+            android:textSize="16sp" />
+
+        <View
+            android:id="@+id/divider4"
+            style="@style/horizontal_divider_60dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/second_class_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/text_color"
+                android:textSize="17sp" />
+
+            <com.ipmph.v.custom.CustomGridView
+                android:id="@+id/subclass2_title_gridview"
+               android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/first_class_title"
+                android:horizontalSpacing="1dp"
+                android:numColumns="4" />
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/scrollview3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <com.ipmph.v.custom.CustomGridView
+                    android:id="@+id/subclass2_video_gridview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:horizontalSpacing="10dp"
+                    android:verticalSpacing="5dp" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <View
+            android:id="@+id/more_divider2"
+            android:visibility="gone"
+            style="@style/horizontal_divider_5dp" />
+
+        <TextView
+            android:id="@+id/operation_more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:padding="10dp"
+            android:clickable="true"
+            android:background="@drawable/gridview_item_selector"
+            android:gravity="center"
+            android:text="@string/more"
+            android:textColor="@color/color_3b3b3b"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</ScrollView>
